@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FITLIFE — Área do Aluno</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand" aria-label="FITLIFE">FIT<span>LIFE</span></div>
+    <nav aria-label="Navegação principal">
+      <button data-page="perfil">Meu Perfil</button><button data-page="cadastro">Meu Cadastro</button>
+      <button data-page="treinos">Meus Treinos</button><button data-page="avaliacao">Agendar Avaliação</button>
+      <button data-page="login">Sair</button>
+    </nav>
+  </header>
+  <main>
+    <section id="login" class="page active">
+      <div class="auth-card">
+        <div class="logo-mark" aria-hidden="true">F</div>
+        <span class="eyebrow">ÁREA DO ALUNO</span>
+        <h1>Bem-vindo ao FITLIFE</h1>
+        <p class="muted">Acesse sua área do aluno e acompanhe sua evolução.</p>
+        <label>E-mail<input id="loginEmail" type="email" placeholder="seu@email.com" autocomplete="email" required
+            aria-label="E-mail"></label>
+        <label>Senha<input type="password" placeholder="••••••••" autocomplete="current-password" required
+            aria-label="Senha"></label>
+        <button class="primary wide" data-page="perfil">Entrar</button>
+        <div class="link-row"><button data-page="cadastro">Criar Conta</button><button class="text-btn"
+            onclick="notify('Um link de recuperação seria enviado para seu e-mail.')">Esqueci Minha Senha</button></div>
+        <small class="accessibility">Interface pensada para navegação simples e leitura clara.</small>
+      </div>
+    </section>
+
+    <section id="cadastro" class="page">
+      <div class="container">
+        <div class="page-head">
+          <div><span class="eyebrow">DADOS DO ALUNO</span>
+            <h2>Meu Cadastro</h2>
+            <p class="muted">Mantenha seus dados sempre atualizados.</p>
+          </div><button class="ghost" data-page="perfil">Voltar</button>
+        </div>
+        <div class="panel form-grid">
+          <label>CPF<input value="123.456.789-00" required></label><label>Nome Completo<input value=""
+              required></label>
+          <label>Data de nascimento<input type="date" value="" required></label><label>Telefone<input
+              value="(44) 99999-9999" required></label>
+          <label>E-mail<input value="" required></label><label>Endereço<input value="Rua Malibu, 100"
+              required></label>
+          <label>Cidade<input value="P" required></label><label>Estado (UF)<select required>
+              <option>PR</option>
+              <option>SP</option>
+              <option>SC</option>
+            </select></label>
+          <label>Senha<input type="password" value="12345678" required></label>
+          <div class="actions full"><button class="ghost"
+              onclick="notify('Alterações canceladas.')">Cancelar</button><button class="primary"
+              onclick="notify('Cadastro salvo com sucesso!')">Salvar</button><button class="secondary"
+              data-page="treinos">Meus Treinos</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="treinos" class="page">
+      <div class="container">
+        <div class="page-head">
+          <div><span class="eyebrow">ROTINA DE EXERCÍCIOS</span>
+            <h2>Meus Treinos</h2>
+            <p class="muted">Acompanhe seus objetivos e a rotina atual.</p>
+          </div><button class="ghost" data-page="perfil">Voltar</button>
+        </div>
+        <div class="panel">
+          <div class="toolbar"><button class="primary" onclick="notify('Novo treino criado.')">+
+              Adicionar</button><button class="ghost"
+              onclick="notify('Treino selecionado para edição.')">Editar</button><button class="ghost"
+              onclick="notify('Treino salvo.')">Salvar</button><button class="danger"
+              onclick="notify('Treino excluído.')">Excluir</button></div>
+          <table>
+            <thead>
+              <tr>
+                <th>Nome do treino</th>
+                <th>Objetivo</th>
+                <th>Instrutor</th>
+                <th>Data de início</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Hipertrofia A</strong></td>
+                <td>Ganho de massa</td>
+                <td>Renato Cariani</td>
+                <td>05/08/2026</td>
+              </tr>
+              <tr>
+                <td><strong>Cardio + Core</strong></td>
+                <td>Condicionamento</td>
+                <td>Julio Balestrin</td>
+                <td>08/08/2026</td>
+              </tr>
+              <tr>
+                <td><strong>Hipertrofia B</strong></td>
+                <td>Ganho de massa</td>
+                <td>Renato Cariani</td>
+                <td>12/08/2026</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="hint">Dica: revise seus treinos com o instrutor antes de alterar cargas ou objetivos.</div>
+      </div>
+    </section>
+
+    <section id="avaliacao" class="page">
+      <div class="container">
+        <div class="page-head">
+          <div><span class="eyebrow">ACOMPANHAMENTO</span>
+            <h2>Agendar Avaliação Física</h2>
+            <p class="muted">Escolha uma data e um profissional disponível.</p>
+          </div><button class="ghost" data-page="perfil">Voltar</button>
+        </div>
+        <div class="panel form-grid">
+          <label>Nome do aluno<input value="" required></label><label>Data da Avaliação<input
+              type="date" value="2026-08-20" required></label>
+          <label>Horário<select required>
+              <option>08:00</option>
+              <option>10:00</option>
+              <option>14:00</option>
+              <option>16:00</option>
+            </select></label>
+          <label>Profissional Responsável<select required>
+              <option>Vivi Winkler — Nutrição</option>
+              <option>Renato Cariani — Educação Física</option>
+            </select></label>
+          <div class="actions full"><button class="primary" onclick="notify('Novo agendamento iniciado.')">Novo
+              Agendamento</button><button class="secondary"
+              onclick="notify('Agendamento salvo!')">Salvar</button><button class="ghost"
+              onclick="notify('Agendamento cancelado.')">Cancelar</button></div>
+        </div>
+        <div class="panel">
+          <div class="section-title">
+            <h3>Próximas avaliações</h3><span class="badge">2 agendamentos</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Horário</th>
+                <th>Profissional</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>20/08/2026</td>
+                <td>08:00</td>
+                <td>Carla Mendes</td>
+              </tr>
+              <tr>
+                <td>03/09/2026</td>
+                <td>14:00</td>
+                <td>Rafael Lima</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="perfil" class="page">
+      <div class="container">
+        <div class="profile-hero">
+          <div class="avatar" aria-label="Iniciais WS">WS</div>
+          <div><span class="eyebrow">ÁREA DO ALUNO</span>
+            <h2>Meu Perfil</h2>
+            <p class="muted">Olá, Will! Aqui está um resumo da sua jornada na FITLIFE.</p>
+          </div>
+        </div>
+        <div class="summary">
+          <div><strong>3</strong><span>Treinos ativos</span></div>
+          <div><strong>2</strong><span>Avaliações agendadas</span></div>
+          <div><strong>Curitiba</strong><span>Cidade</span></div>
+          <div><strong>Growth</strong><span>Suplementação</span></div>
+        </div>
+        <div class="cards">
+          <button class="feature" data-page="treinos"><span class="icon">01</span><strong>Meus
+              Treinos</strong><span>Consulte sua rotina e seus objetivos.</span></button>
+          <button class="feature" data-page="avaliacao"><span class="icon">02</span><strong>Agendar
+              Avaliação</strong><span>Marque uma avaliação física.</span></button>
+          <button class="feature" data-page="cadastro"><span class="icon">03</span><strong>Meu
+              Cadastro</strong><span>Atualize seus dados pessoais.</span></button>
+          <button class="feature" onclick="notify('Nenhuma avaliação anterior cadastrada.')"><span
+              class="icon">04</span><strong>Histórico de Avaliações</strong><span>Veja suas avaliações
+              anteriores.</span></button>
+        </div>
+        <button class="logout" data-page="login">Sair da conta</button>
+      </div>
+    </section>
+    <footer class="academic-footer">UniCesumar • ADS • IHC (Interface Humano-Computador)</footer>
+  </main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
